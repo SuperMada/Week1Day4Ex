@@ -48,20 +48,20 @@ def is_strong_password(password, min_length=8):
     up = False
     low = False
     dig = False
-    print(password)
+    
     if len(password) < min_length:
         return False
     for c in password:
-        print(c)
+        
         if c.isupper():
-            up == True
+            up = True
         if c.islower():
-            low == True
+            low = True
         if c.isdigit():
-            dig == True
+            dig = True
         if up and low and dig:
             return True
-        print(up, low, dig)
+        
     return False
 
 
