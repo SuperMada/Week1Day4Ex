@@ -6,7 +6,7 @@ one person types, the other dictates, then swap for the last two sections.
 
 
 - Pair members: Antoine Tran & Adam Fischer
-- Repository / branch / PR link: https://github.com/SuperMada/Week1Day4Ex || https://github.com/SuperMada/Week1Day4Ex/tree/feature/test-utils || 
+- Repository / branch / PR link: https://github.com/SuperMada/Week1Day4Ex || https://github.com/SuperMada/Week1Day4Ex/tree/feature/test-utils || https://github.com/SuperMada/Week1Day4Ex/pulls?q=is%3Apr+state%3Aclosed
 - Date and total time spent: 120 mins
 
 
@@ -22,7 +22,7 @@ Fill one row per 30-minute block (add rows if you swapped more often).
 | 2 | 30-60 | Antoine | Adam | Generator Functions | 149f573 |
 | 3 | 60-90 | Adam | Antoine | Decorator Function | abc8a59 |
 | 4 | 90-120 | Antoine | Adam | Lambda Functions and Demo Report | 89dc108 |
-| 5 | 120-150 | Adam | Antoine | Retrospective |  |
+| 5 | 120-150 | Adam | Antoine | Retrospective | d77ecf3 |
 
 
 ## 2. What went well in how we worked together?
@@ -47,8 +47,11 @@ What went well in our working together was our ability to fix the errors in the 
 
 ## 6. Git collaboration
 - Did every swap follow commit, push, pull? What went wrong when we skipped a step? Yes every swap had a commit, push, pull. We never had anything go wrong as we did not skip a step but a possible issue you could run into if you did skip a step would be both local git repos being on different versions and leading to an inability to pull the branch as they were on different commit heads.
-- Did we get a merge conflict? How did we resolve it (or why not)? 
-- Output of `git shortlog -sne` (paste): 
+- Did we get a merge conflict? How did we resolve it (or why not)? No we did not, this is because we stuck to the partner hand of instructions and didn't commit to our local repos before pulling any new changes
+- Output of `git shortlog -sne` (paste):
+     4  SuperMada <adamfishy7@gmail.com>
+     3  INSTINCTxKILLA <g3file@hotmail.com>
+     1  Antoine <77315883+InstinctWorks@users.noreply.github.com>
 
 
 ## 7. Next time
