@@ -17,7 +17,32 @@ def build_demo_report(count=6, seed=7):
     # TODO (Milestone 5): cases = generate_test_cases(count, seed=seed); use slowest(), count_by(),
     #   sorted(counts) for the alphabetical priority names, and sort_cases(..., reverse=True).
     #   Build a list `lines`, then return "\n".join(lines).
-    pass
+    
+    cases = generate_test_cases(count, seed=seed)
+
+    slowest_case = slowest(cases)
+
+    counts = count_by(cases, "priority")
+
+    priority_parts = []
+    
+    for priority in sorted(counts):
+        priority_parts.append(f"{priority}={counts[priority]}")
+
+    priority_summary = ", ".join(priority_parts)
+
+    sorted_cases = sort_cases(cases, "duration", reverse=True)
+
+    lines = ["TEST DATA REPORT",
+        f"Total: {count}",
+        f"Slowest: {slowest_case['id']} ({slowest_case['duration']:.2f} s)",
+        f"By priority: {priority_summary}"
+    ]
+
+    for case in sorted_cases:
+        lines.append(f"{case['id']} | {case['priority']} | "f"{case['status']} | {case['duration']:.2f} s")
+
+    return "\n".join(lines)
 
 
 if __name__ == "__main__":
