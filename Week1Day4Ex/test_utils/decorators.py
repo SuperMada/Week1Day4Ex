@@ -5,6 +5,7 @@ from functools import wraps
 TIMING_LOG = []   # (function_name, seconds) for every timed call
 
 
+
 def timer(func):
     """Decorator: time each call, print '[timer] <name> took <x.xxxx> seconds',
     append (name, seconds) to TIMING_LOG, and return the original result.
@@ -16,4 +17,13 @@ def timer(func):
     #   note the time after, append (func.__name__, elapsed) to TIMING_LOG, print the line,
     #   and `return result`. Finally `return wrapper` from timer.
     # Until you do this, timer returns func unchanged, so the checks will tell you nothing was timed.
-    return func
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        time_before = time.perf_counter()
+        result = func(*args, **kwargs)
+        time_after = time.perf_counter()
+        add = func.__name__ + '' + str(time_after-time_before)
+        TIMING_LOG.append((func.__name__, time_after-time_before))
+        print(add)
+        return result
+    return wrapper
